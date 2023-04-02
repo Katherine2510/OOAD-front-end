@@ -69,9 +69,7 @@ export default function FilmList(){
                 <div className="gallery-image" style={{width: '100%', height: '100%'}}>
                   <img className="img-responsive" src={film1}style={{width: '100%', height: '100%'} }/>
                   <div className="overlay">
-                  
-                    
-                
+ 
                     <p>
                       
                     <Link to={`/thisfilm/${e._id}`}> 

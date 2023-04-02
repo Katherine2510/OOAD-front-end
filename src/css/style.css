@@ -89,6 +89,7 @@ ul{
 }
 .info-block{
     color: #fff;
+    font-size: 15px;;
 }
 .info-block .fa {
     margin-right: 15px;
@@ -99,6 +100,7 @@ ul{
     border-color: rgba(0,0,0,0);
 }
 .navbar{
+    float: left;
     background-color: #000;
     min-height: 35px;
     margin-bottom: 0;
@@ -150,7 +152,7 @@ ul{
     display: inline;
 }
 .top-row{
-    padding: 35px 0;
+    padding:0 0;
 }
 #logo > a {
     color: #0b0044;
@@ -163,18 +165,18 @@ ul{
     font-size: 50px;
 }
 .book-now-btn {
-    background: #000000 none repeat scroll 0 0;
+    background: #b43604 none repeat scroll 0 0;
     border: medium none;
     color: #fff;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0;
-    margin-top:15px;
+    margin-top:0px;
     padding: 8px 15px;
     text-transform: uppercase;
 }
 .book-now-btn:hover, .vacation-offer-details .btn.btn-default:hover{
-    background: #162541;
+    background: #430000;
 }
 
 .cl-effect-10 a::before, .cl-effect-10 a.active::before {

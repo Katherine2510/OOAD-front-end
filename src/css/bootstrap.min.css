@@ -2026,9 +2026,11 @@ pre code {
     margin-left: auto
 }
 
+
 .row {
+    width: 100%;
     margin-right: -15px;
-    margin-left: -15px
+    margin-left: 10px
 }
 
 .col-lg-1,
@@ -5890,7 +5892,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>li>a,
 .pagination>li>span {
     position: relative;
-    float: left;
+    float: center;
     padding: 6px 12px;
     margin-left: -1px;
     line-height: 1.42857143;

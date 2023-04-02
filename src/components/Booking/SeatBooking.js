@@ -81,20 +81,22 @@ class SeatBooking extends Component {
         return (
             <div>
                 <div>
-                    <h1 style={{ color: "black" }}>Movie Seat Selection</h1>
+                    <h1 style={{ color: "black" }}>Lựa chọn chỗ ngồi</h1>
+                    <h1 style={{ fontSize: '15px' }}>PHIM: Tên phim</h1>
+                    <h1 style={{ fontSize: '15px' }}>Khung giờ chiếu: 12h - 14h</h1>
                     <div className="containerbooking">
                         <div className="w3ls-reg" style={{paddingTop: '0px'}}>
                             <ul className="seat_w3ls">
-                                <li className="smallBox greenBox">Selected Seat</li>
+                                <li className="smallBox greenBox">Ghế đang chọn</li>
 
-                                <li className="smallBox redBox">Reserved Seat</li>
+                                <li className="smallBox redBox">Ghế đã đặt trước</li>
 
-                                <li className="smallBox emptyBox">Empty Seat</li>
+                                <li className="smallBox emptyBox">Các ghế trống</li>
                             </ul>
                             <div className="seatStructure txt-center" style={{overflowX:'auto'}}>
                                 {seatsGenerator()}
                                 <div className="screen">
-                                    <h2 className="wthree">Screen this way</h2>
+                                    <h2 className="wthree">Đây là màn hình</h2>
                                 </div>
                                 <button onClick={() => { this.SelectSeats()}}>Confirm Selection</button>
                             </div>
