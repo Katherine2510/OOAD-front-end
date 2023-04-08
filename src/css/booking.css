@@ -190,13 +190,16 @@ body {
 }
 
 .containerbooking {
+  height: 100%;
+  float: left;
+  width: 70%;
   display: -webkit-flex;
   display: -webkit-box;
   display: -moz-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   -webkit-box-pack: center;
   -moz-box-pack: center;
@@ -204,7 +207,24 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
 }
-
+.containerpayment {
+  height: 100%;
+  float: right;
+  width: 30%;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
 h1 {
   font-size: 2.9em;
   text-transform: uppercase;
@@ -538,3 +558,12 @@ input:disabled::before {
   background-color: red;
 }
 
+.bill {
+  height: 100%;
+  background-color: #b43604;;
+  width: 100%;
+  color: #fff;
+}
+.bill p {
+  text-align: center;
+}

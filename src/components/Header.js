@@ -70,7 +70,7 @@ const Header =() => {
                         <li><a data-hover="THÀNH VIÊN" href="/member"><span>THÀNH VIÊN</span></a></li>
                         <li><a  data-hover="LOGIN" onClick={() =>navigate('/login')} className="text-center active" style={{marginLeft: '40px',marginRight: '10px'}}><span style={{  width: '100px' }}>LOGIN</span></a></li>
                 
-                        <li><a  data-hover="REGISTER" onClick={() =>navigate('/login')} className="text-right active"><span>REGISTER</span></a></li>
+                        <li><a  data-hover="REGISTER" onClick={() =>navigate('/register')} className="text-right active"><span>REGISTER</span></a></li>
                       </ul>
                     </div>
                   </nav>

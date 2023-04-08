@@ -76,8 +76,12 @@ export default function FilmList(){
                     {e.title} 
                      </Link>
                      </p>
+                     
+                    <Link className="button_book_tickets" aria-hidden="true" to={`/datebooking/${e._id}`} style={{ color:"white" }}> 
+                    Đặt vé
+                     </Link>
+                 
 
-                    <a href="" className="button_book_tickets" aria-hidden="true" > ĐẶT VÉ</a>
               </div>
 
               </div>

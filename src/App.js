@@ -12,9 +12,18 @@ import Comment from './components/Comment';
 import Intro from './components/Intro';
 import Event from './components/Event';
 import News from './components/News';
-
+import FoodBooking from './components/Booking/FoodBooking';
 import ViewFilmDetail from './components/View/ViewFilmDetail'
 import SeatBooking from './components/Booking/SeatBooking';
+import Login from './components/User/Login';
+import Register from './components/User/Register';
+import TimeBooking from './components/Booking/TimeBooking';
+import DateBooking from './components/Booking/DateBooking';
+import ViewNameFilm from './components/View/ViewNameFilm';
+
+import SeatBooking2 from './components/Booking/SeatBooking2';
+import SeatBooking3 from './components/Booking/SeatBooking3';
+import TimeBooking2 from './components/Booking/TimeBooking2';
 const App = () => {
   return (
     
@@ -26,6 +35,32 @@ const App = () => {
           element={
             <div>
               <HeaderFilm/>
+           
+            </div>
+          }
+        >
+          </Route>
+       
+      </Routes>
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            <div>
+              <Login/>
+           
+            </div>
+          }
+        >
+          </Route>
+       
+      </Routes>
+      <Routes>
+        <Route
+          path="/register"
+          element={
+            <div>
+              <Register/>
            
             </div>
           }
@@ -125,8 +160,85 @@ const App = () => {
           </Route>
        
       </Routes>
+      <Routes>
+        <Route
+          path="/datebooking/:id"
+          element={
+            <div>
+              
+              <ViewNameFilm/>
+              <DateBooking/>
+           
+            </div>
+          }
+        >
+          </Route>
+       
+      </Routes>
+      <Routes>
+                    <Route
+                    path="/datebooking/:id/timebooking/:cid"
+                    element={
+                        <div>   
+                          
+                          <ViewNameFilm/>  
+                          <DateBooking/>
+                        <TimeBooking2/>
+                        </div>
+                    }
+                    >
+                    </Route>
+                
+                </Routes>
+                <Routes>
+                    <Route
+                    path="/datebooking/:id/timebooking/:cid/S1"
+                    element={
+                        <div> 
+                          <ViewNameFilm/>  
+                          <DateBooking/>
+                        <TimeBooking2/>
+                        <SeatBooking/>
+                        </div>
+                    }
+                    >
+                    </Route>
+                
+                </Routes>
+                <Routes>
+                    <Route
+                    path="/datebooking/:id/timebooking/:cid/M1"
+                    element={
+                        <div> 
+                          <ViewNameFilm/>  
+                          <DateBooking/>
+                        <TimeBooking2/>
+                        <SeatBooking3/>
+                        </div>
+                    }
+                    >
+                    </Route>
+                
+                </Routes>
+                <Routes>
+                    <Route
+                    path="/datebooking/:id/timebooking/:cid/L1"
+                    element={
+                        <div> 
+                          <ViewNameFilm/>  
+                          <DateBooking/>
+                        <TimeBooking2/>
+                        <SeatBooking2/>
+                        </div>
+                    }
+                    >
+                    </Route>
+                
+                </Routes>
+    
     
       <Footer />
+      
       
     
   </>
