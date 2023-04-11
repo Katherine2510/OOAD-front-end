@@ -4,7 +4,7 @@ import '../css/style.css'
 import '../css/responsive.css'
 import '../css/lightbox.min.css'
 import '../css/bootstrap.min.css'
-import film1 from '../images/film1.png'
+
 
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -64,13 +64,14 @@ export default function FilmList(){
               
               FilmList.allMovie?.map((e, i) =>
              
-              <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12" key={i}>
+              <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12" key={i} style={{ height: '100%' }}>
               
-                <div className="gallery-image" style={{width: '100%', height: '100%'}}>
-                  <img className="img-responsive" src={film1}style={{width: '100%', height: '100%'} }/>
+                <div className="gallery-image" >
+                  <img className="img-responsive" src={`${e.image_url}`} style={{objectFit: 'contain'}} />
                   <div className="overlay">
  
                     <p>
+                     
                       
                     <Link to={`/thisfilm/${e._id}`}> 
                     {e.title} 

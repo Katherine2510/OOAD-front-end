@@ -39,6 +39,7 @@ export default class Login extends React.Component {
       .then((result) => {
         console.log(result);
         localStorage.setItem("success", result.success);
+        localStorage.setItem("token", result.token);
         if (result.success == true) {
           alert("Thanh cong");
         } else {

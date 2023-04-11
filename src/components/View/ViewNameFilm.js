@@ -7,7 +7,7 @@ import '../../css/responsive.css'
 import '../../css/lightbox.min.css'
 import '../../css/bootstrap.min.css'
 
-import film3 from '../../images/KHÓA CHẶT CỬA NÀO SUZUME.png'
+
 
 import axios from 'axios';
 
@@ -33,7 +33,7 @@ export default function ViewNameFilm(props) {
         <div>
                 <div style={{ marginLeft: '8%' }}>
                     <h1> {ViewNameFilm.movie?.title}</h1>
-                    <p style={{ textAlign: 'center'}}>Thời lượng: {ViewNameFilm.movie?.durationInMins}   Ngày khởi chiều: {ViewNameFilm.movie?.releaseDate}  Đạo diên: {ViewNameFilm.movie?.director} </p>
+                    <p style={{ textAlign: 'center'}}>Thời lượng: {ViewNameFilm.movie?.durationInMins} phút  Ngày khởi chiều: {ViewNameFilm.movie?.releaseDate}  Đạo diên: {ViewNameFilm.movie?.director} </p>
               </div>
 </div>
 

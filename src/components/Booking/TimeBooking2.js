@@ -8,9 +8,9 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 const roleType = {
-    S1: '642c132c94b5f0bee36956a9',
-    M1:'642c136894b5f0bee36956ad',
-    L1:'642c135b94b5f0bee36956ab',
+    S: 'S',
+    M:'M',
+    L:'L',
     //thêm các role vào đây,
 }
 
@@ -25,7 +25,7 @@ const TimeBooking2 = () => {
         }, [cid]);
 
         function refreshViewTime() {
-        const ProjectAPI = axios.get(`http://localhost:3001/api/show/getShowByDate/${cid}`
+        const ProjectAPI = axios.get(`http://localhost:3001/api/show/getShowByMovieID/${id}/${cid}`
         )
             .then(result => setViewTime(result.data))
             .catch(err => console.log(err))
@@ -46,24 +46,29 @@ const TimeBooking2 = () => {
             })
             .then((result) => {
                 console.log(result);
-                window.localStorage.clear();
+                localStorage.removeItem("startime")
+                localStorage.setItem("startime", result?.show?.startTime.substr(11,5));
+                localStorage.removeItem("endtime")
+                localStorage.setItem("endtime", result?.show?.endTime.substr(11,5));
+                localStorage.removeItem("hall")
                 localStorage.setItem("hall", result?.show?.hall);
              
-                switch (result?.show?.hall) {
-                    case roleType.S1:
-                    navigate(`/datebooking/${id}/timebooking/${cid}/S1`);
-                   
+                switch (result?.show?.hall.type) {
+                    case roleType.S:
+                    navigate(`/datebooking/${id}/timebooking/${cid}/S`);
+                    localStorage.setItem('kindofhall', 'S')
                     break;
 
-                    case roleType.L1:
-                    navigate(`/datebooking/${id}/timebooking/${cid}/L1`);
+                    case roleType.L:
+                    navigate(`/datebooking/${id}/timebooking/${cid}/L`);
                     console.log(result)
-                 
+                    localStorage.setItem('kindofhall', 'L')
                     break;
 
-                    case roleType.M1:
-                    navigate(`/datebooking/${id}/timebooking/${cid}/M1`);
+                    case roleType.M:
+                    navigate(`/datebooking/${id}/timebooking/${cid}/M`);
                     console.log(result)
+                    localStorage.setItem('kindofhall', 'M')
                     break;
                     //case //viết nốt vào đây là đc nè
                    
@@ -87,7 +92,7 @@ const TimeBooking2 = () => {
           {  
                ViewTime.listShow?.map((e, i) => (
                  <div>
-                  <Link to ={`/${id}/${cid}/${e._id}`} className="button_book_times" onClick={() => ClickToSeat(e._id)} >
+                  <Link to ={""} className="button_book_times" onClick={() => {ClickToSeat(e._id); localStorage.setItem("showID", e._id) }} >
                {e.startTime.substr(11, 5)} - {e.endTime.substr(11, 5)}
  
              </Link>

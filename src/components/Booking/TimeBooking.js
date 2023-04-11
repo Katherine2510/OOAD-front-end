@@ -17,12 +17,12 @@ export default function TimeBooking(props)  {
     const { cid } = useParams();
     useEffect(() => {
       refreshViewTime();
-    }, [cid]);
+    }, [cid][id]);
 
 
   
     function refreshViewTime() {
-      const ProjectAPI = axios.get(`http://localhost:3001/api/show/getShowByDate/${cid}`
+      const ProjectAPI = axios.get(`http://localhost:3001/api/show/getShowByMovieID/${id}/${cid}`
       )
         
         .then(res => setViewTime(res.data))
@@ -33,6 +33,7 @@ export default function TimeBooking(props)  {
     return (
       <div  className="container" style={{ paddingLeft: '10px' }} > 
        <div >  
+        <p>{id} </p>
           <h1 className="booking-detail" style={{ fontSize: '25px', float: 'left'}} >Chọn khung giờ xem phim</h1>
 
           <h1 className="booking-detail" style={{ fontSize: '25px', float: 'left'}} >Ngày chiếu : {cid}</h1>

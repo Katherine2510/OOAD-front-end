@@ -1170,3 +1170,6 @@ footer a{
   Link .active {
     background-color: red;
   }
+  .bill {
+    float: center;
+  }
