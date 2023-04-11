@@ -41,9 +41,9 @@ export default function CommentList(){
    
           {CommentList.listRating?.map((e, i) => (
            <div className="container" >
-           <h1 className='username' style={{ fontSize:  '15px',float:'left' }}>Người dùng </h1>
-           <p style={{ float: 'right',fontSize: '8px' }}>(Đã đánh giá {e.rating_score} sao)</p>
-           <p className='comment-line comment-item'style={{ fontSize: '10px', float:'left' }}>{e.comment}</p> </div>
+           <h1 className='username' style={{ fontSize:  '15px',float:'left' }}>Người dùng ẩn danh {i + 1} </h1>
+           <p style={{ float: 'right',fontSize: '15px' }}>(Đã đánh giá {e.rating_score} sao)</p>
+           <p className='comment-line comment-item'style={{ fontSize: '15px', float:'left' }}>{e.comment}</p> </div>
 
           
             

@@ -29,47 +29,6 @@ export default function Schedule(props)  {
         return value;
       };
     
-      const [value, setValue] = useState(getInitialState);
-    
-      const handleChange = e => {
-        
-      };
-  
-    const { id } = useParams();
-    useEffect(() => {
-      refreshViewDate();
-    }, [id]);
-  
-    function refreshViewDate(param) {
-      const ProjectAPI = axios.get(`http://localhost:3001/api/show/getShowByDate/${param}`
-      )
-        .then(res => setViewDate(res.data))
-        .catch(err => console.log(err))
-    }
-    function handleClick(param){
-             switch (String(param)) {
-              case roleType.S:
-              navigate(`/${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()).padStart(2, '0')}`);
-              break;
-
-              case roleType.M:
-                navigate(`/${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+1).padStart(2, '0')}`);
-                break;
-              case roleType.L:
-                  navigate(`/${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+2).padStart(2, '0')}`);
-                  break;
-              case roleType.B:
-                    navigate(`/${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+3).padStart(2, '0')}`);
-                    break;
-              
-            }
-        
-      
-    };
-           
-  
-    
-    
     return (
         <div className="container" style={{ paddingLeft: '10px' }}>
         
@@ -77,10 +36,10 @@ export default function Schedule(props)  {
         <div className="row side-B">
         <div >
       
-          <Link ref={buttonRef} onClick={handleClick (`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()).padStart(2, '0')}`) } className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()).padStart(2, '0')}</Link>
-          <Link ref={buttonRef} onClick={handleClick (`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+1).padStart(2, '0')}`) }  className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()+1).padStart(2, '0')}</Link>
-          <Link ref={buttonRef} onClick={handleClick (`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+2).padStart(2, '0')}`) }  className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()+2).padStart(2, '0')}</Link>
-          <Link ref={buttonRef} onClick={handleClick (`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+3).padStart(2, '0')}`) }  className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()+3).padStart(2, '0')}</Link>
+          <Link ref={buttonRef} to={`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()).padStart(2, '0')}`} className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()).padStart(2, '0')}</Link>
+          <Link ref={buttonRef} to={`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+1).padStart(2, '0')}`} className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()+1).padStart(2, '0')}</Link>
+          <Link ref={buttonRef} to={`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+2).padStart(2, '0')}`}   className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()+2).padStart(2, '0')}</Link>
+          <Link ref={buttonRef} to={`${current.getFullYear()}-${String(current.getMonth() + 1).padStart(2, '0')}-${String(current.getDate()+3).padStart(2, '0')}`}  className="button_book_times" >{current.getFullYear()}-{String(current.getMonth() + 1).padStart(2, '0')}-{String(current.getDate()+3).padStart(2, '0')}</Link>
          
           </div>  
           </div>

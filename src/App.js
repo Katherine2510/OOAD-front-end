@@ -30,6 +30,7 @@ import CheckAvailableseat from './components/Booking/CheckAvailableSeat';
 import StarRatting from './components/Comment/StarRatting';
 import CommentList from './components/Comment/CommentList';
 import Schedule from './components/Schedule';
+import ScheduleADay from './components/ScheduleADay';
 const App = () => {
   return (
     
@@ -192,6 +193,18 @@ const App = () => {
           element={
             <div>
              <Schedule />
+            </div>
+          }
+        >
+          </Route>
+       
+      </Routes>
+      <Routes>
+        <Route
+          path="/schedule/:id"
+          element={
+            <div>
+             <ScheduleADay />
             </div>
           }
         >
